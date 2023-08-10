@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-const MillasToKm = (millas) => {
+function millasToKm(millas) {
   const CONVETION = 1.609
-  return millas * CONVETION
+  return (isNaN(millas) || millas < 0) ? 'Ingrese un valor numerico positivo' : millas * CONVETION
 }
 export const Convert = () => {
   //hook
@@ -15,9 +15,9 @@ export const Convert = () => {
   return <>
       <form className="App-form">
         <label>Millas</label>
-        <input className="App-input" autoComplete='off' value={Millas} onChange={handleInputChange}></input>
+        <input data-testid="input" className="App-input" autoComplete='off' value={Millas} onChange={handleInputChange}></input>
         <label>Kilometros</label>
-        <label className="form-NumberKm">{MillasToKm(Millas)}</label>
+        <label data-testid="numberKm" className="form-NumberKm">{millasToKm(Millas)}</label>
       </form>
   </>
 }
