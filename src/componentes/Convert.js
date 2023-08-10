@@ -1,9 +1,8 @@
 import { useState } from "react";
 
-export const MillasToKm = ({}) => {
-  return <>
-    
-  </>
+const MillasToKm = (millas) => {
+  const CONVETION = 1.609
+  return millas * CONVETION
 }
 export const Convert = () => {
   //hook
@@ -12,12 +11,13 @@ export const Convert = () => {
   const handleInputChange = (event) => {
     setMilas(event.target.value)
   }
+
   return <>
-    <form className="App-from">
-      <label>Millas</label>
-      <input autoComplete='off' value={Millas} onChange={handleInputChange}></input>
-      <label>Km</label>
-      <p>{(Number(Millas) * 1.609)}</p>
-    </form>
+      <form className="App-form">
+        <label>Millas</label>
+        <input autoComplete='off' value={Millas} onChange={handleInputChange}></input>
+        <label>Kilometros</label>
+        <label className="form-NumberKm">{MillasToKm(Millas)}</label>
+      </form>
   </>
 }

@@ -1,3 +1,8 @@
+:root{
+  --Pink: hsl(322, 100%, 66%);
+  --Light--Pink: hsl(321, 100%, 78%);
+  --Very--Dark--Cyan: hsl(192, 100%, 9%);
+}
 *{
   margin: 0px;
   box-sizing: border-box;
@@ -10,9 +15,16 @@
   width: 100vw;
   height: 100vh;
   gap: 50px 0;
+  font-size: 30px;
 } 
-.App-from{
+.App-form{
   display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
   flex-direction: column;
   gap: 10px 0;
+}
+.form-NumberKm{
+  background-color: var(--Light--Pink);
+  border-radius: 30px;
 }
