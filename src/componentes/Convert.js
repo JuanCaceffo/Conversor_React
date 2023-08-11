@@ -15,7 +15,7 @@ export const Convert = () => {
   return <>
       <form className="App-form">
         <label>Millas</label>
-        <input data-testid="input" className="App-input" autoComplete='off' value={Millas} onChange={handleInputChange}></input>
+        <input data-testid="millas" className="App-input" autoComplete='off' value={Millas} onChange={handleInputChange}></input>
         <label>Kilometros</label>
         <label data-testid="numberKm" className="form-NumberKm">{millasToKm(Millas)}</label>
       </form>
