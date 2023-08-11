@@ -1,8 +1,9 @@
 import { useState } from "react";
 
+export const ERROR_NEGVALUE = '<ingrese un valor positivo>'
 function millasToKm(millas) {
   const CONVETION = 1.609
-  return (isNaN(millas) || millas < 0) ? 'Ingrese un valor numerico positivo' : millas * CONVETION
+  return (millas<0) ? ERROR_NEGVALUE : (millas * CONVETION)
 }
 export const Convert = () => {
   //hook
@@ -15,7 +16,7 @@ export const Convert = () => {
   return <>
       <form className="App-form">
         <label>Millas</label>
-        <input data-testid="millas" className="App-input" autoComplete='off' value={Millas} onChange={handleInputChange}></input>
+        <input data-testid="millas" type={"number"} className="App-input" autoComplete='off' value={Millas} onChange={handleInputChange}></input>
         <label>Kilometros</label>
         <label data-testid="numberKm" className="form-NumberKm">{millasToKm(Millas)}</label>
       </form>
